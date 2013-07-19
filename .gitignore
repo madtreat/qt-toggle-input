@@ -1,0 +1,4 @@
+*.o
+toggle-input
+moc_*
+
