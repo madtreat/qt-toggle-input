@@ -72,6 +72,7 @@ void ToggleInput::mouseReleaseEvent(QMouseEvent *e) {
 
   update();
 
+  emit positionChanged(m_position == POS_UP);
 }
 
 void ToggleInput::paintEvent(QPaintEvent*) {
@@ -114,9 +115,12 @@ void ToggleInput::setMode(int threePole, int topLock, int bottomLock) {
   m_threePole  = threePole;
   m_bottomLock = bottomLock;
   m_topLock    = topLock;
-  
+}
 
-
+void ToggleInput::setPosition(bool up)
+{
+   m_position = up ? POS_UP : POS_DOWN;
+   update();
 }
 
 QSize ToggleInput::sizeHint() const {

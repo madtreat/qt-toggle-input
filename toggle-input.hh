@@ -12,7 +12,7 @@ class ToggleInput : public QWidget {
 
 private:
 
-    enum {
+    enum Position {
       POS_UP,
       POS_CENTER,
       POS_DOWN
@@ -53,9 +53,11 @@ public:
    */
   void setMode(int threePole, int topLock, int bottomLock);
 
-signals:
+public slots:
+   void setPosition(bool up); // for twoPole
 
-  void positionChange(ToggleInput*);
+signals:
+   void positionChanged(bool up); // for twoPole
 };
 
 #endif // _IK_TOGGLE_INPUT_INC_
