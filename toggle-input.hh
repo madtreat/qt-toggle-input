@@ -2,8 +2,9 @@
 #ifndef _IK_TOGGLE_INPUT_INC_
 #define _IK_TOGGLE_INPUT_INC_
 
-#include <QtGui>
-#include <QtSvg/QGraphicsSvgItem>
+#include <QWidget>
+#include <QPixmap>
+
 
 class ToggleInput : public QWidget {
 

@@ -1,7 +1,9 @@
 
-#include <QtGui>
-
 #include "toggle-input.hh"
+
+#include <QPainter>
+#include <QMouseEvent>
+#include <QDebug>
 
 QPixmap *ToggleInput::s_centerImage = NULL;
 QPixmap *ToggleInput::s_upImage     = NULL;
@@ -11,13 +13,13 @@ QPixmap *ToggleInput::s_downImage   = NULL;
 ToggleInput::ToggleInput(QWidget* parent) : QWidget(parent) {
 
   if(!s_centerImage) 
-    s_centerImage = new QPixmap("png/toggle-center.png");
+    s_centerImage = new QPixmap(":/toggle-input/png/toggle-center.png");
 
   if(!s_upImage) 
-    s_upImage = new QPixmap("png/toggle-up.png");
+    s_upImage = new QPixmap(":/toggle-input/png/toggle-up.png");
 
   if(!s_downImage) 
-    s_downImage = new QPixmap("png/toggle-down.png");
+    s_downImage = new QPixmap(":/toggle-input/png/toggle-down.png");
 
   setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
@@ -93,11 +95,16 @@ int ToggleInput::arm_position() {
 void ToggleInput::setMode(int threePole, int topLock, int bottomLock) {
 
   if(threePole == false) {
-    if(topLock == false && bottomLock == false)
-      throw "ToggleInput: cant have bi-pole mode with no locking positions";
+//    if(topLock == false && bottomLock == false)
+//      qWarning() << "ToggleInput: cant have bi-pole mode with no locking positions";
 
-    if(topLock == false) { m_defaultPosition = POS_DOWN; m_position = POS_DOWN; }
-    if(bottomLock == false) m_defaultPosition = POS_UP;
+    if(topLock == false) {
+       m_defaultPosition = POS_DOWN;
+       m_position = POS_DOWN;
+    }
+    if(bottomLock == false) {
+      m_defaultPosition = POS_UP;
+    }
 
   } else {
     m_defaultPosition = POS_CENTER;

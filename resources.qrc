@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RCC version="1.0">
+   <qresource prefix="/toggle-input">
+      <file>png/toggle-center.png</file>
+      <file>png/toggle-down.png</file>
+      <file>png/toggle-up.png</file>
+      <file>svg/toggle-center.svg</file>
+      <file>svg/toggle-down.svg</file>
+      <file>svg/toggle-up.svg</file>
+   </qresource>
+</RCC>

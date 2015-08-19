@@ -1,8 +1,10 @@
 
-#include <QtGui>
+#include "main-window.hh"
+
+#include <QWidget>
+#include <QHBoxLayout>
 
 #include "toggle-input.hh"
-#include "main-window.hh"
 
 MainWindow::MainWindow(QWidget* w) : QMainWindow(w), tabSelector(this) {
 

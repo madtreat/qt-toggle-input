@@ -2,8 +2,11 @@
 #ifndef _IK_MAINWINDOW_INC_
 #define _IK_MAINWINDOW_INC_
 
-#include <QtGui>
-#include "toggle-input.hh"
+#include <QMainWindow>
+#include <QTabWidget>
+
+class ToggleInput;
+
 
 class MainWindow : public QMainWindow {
   
