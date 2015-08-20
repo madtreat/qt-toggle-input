@@ -12,6 +12,8 @@ QPixmap *ToggleInput::s_downImage   = NULL;
 
 ToggleInput::ToggleInput(QWidget* parent) : QWidget(parent) {
 
+  Q_INIT_RESOURCE(qt_toggle_input);
+  
   if(!s_centerImage) 
     s_centerImage = new QPixmap(":/toggle-input/png/toggle-center.png");
 

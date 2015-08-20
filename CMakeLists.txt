@@ -9,7 +9,7 @@ set(HEADERS
 )
 
 set(RESOURCES
-   resources.qrc
+   qt_toggle_input.qrc
 )
 qt5_add_resources(TOGGLE_IMAGES ${RESOURCES})
 set_source_files_properties(${TOGGLE_IMAGES} PROPERTIES GENERATED ON)
