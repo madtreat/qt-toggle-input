@@ -81,8 +81,8 @@ void ToggleInput::paintEvent(QPaintEvent*) {
 
   QPainter p(this);
 
-  int px = width()  / 2 - 45;
-  int py = height() / 2 - 60;
+  int px = width()/2 - DEFAULT_WIDTH/2;
+  int py = height()/2 - DEFAULT_HEIGHT/2;
 
   switch(m_position) {
     case POS_UP:     p.drawPixmap( px, py, *s_upImage );     break;
@@ -119,12 +119,11 @@ void ToggleInput::setMode(int threePole, int topLock, int bottomLock) {
   m_topLock    = topLock;
 }
 
-void ToggleInput::setPosition(bool up)
-{
+void ToggleInput::setPosition(bool up) {
    m_position = up ? POS_UP : POS_DOWN;
    update();
 }
 
 QSize ToggleInput::sizeHint() const {
-  return QSize( 90, 120 );
+  return QSize( DEFAULT_WIDTH, DEFAULT_HEIGHT );
 }

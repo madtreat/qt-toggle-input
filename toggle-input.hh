@@ -10,6 +10,10 @@ class ToggleInput : public QWidget {
 
   Q_OBJECT
 
+   // The size hint, also the size of the images used to draw the switch
+   static const int DEFAULT_WIDTH = 80;
+   static const int DEFAULT_HEIGHT = 137;
+
 private:
 
     enum Position {
