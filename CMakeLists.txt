@@ -37,3 +37,6 @@ target_link_libraries(toggle-input-test
    ${PROJECT_NAME}
 )
 
+install(TARGETS ${PROJECT_NAME} DESTINATION lib)
+install(TARGETS toggle-input-test DESTINATION bin)
+
