@@ -10,7 +10,12 @@ QPixmap *ToggleInput::s_upImage     = NULL;
 QPixmap *ToggleInput::s_downImage   = NULL;
 
 
-ToggleInput::ToggleInput(QWidget* parent) : QWidget(parent) {
+ToggleInput::ToggleInput(QWidget* parent)
+: QWidget(parent),
+m_defaultPosition(POS_UP),
+m_threePole(false),
+m_topLock(false),
+m_bottomLock(false) {
 
   Q_INIT_RESOURCE(qt_toggle_input);
   
